@@ -149,7 +149,7 @@ The _createvdu_body file contents are:
 }
 ```
 
-Note that in the body, you will have to edit the `key_pair_name` to be an existing key pair.  The `vfModuleName` represents the deployment name.
+Note that in the body, you will have to edit the `key_pair_name` to be an existing key pair.  The `vfModuleName` represents the deployment name.  If you wish to build the war yourself using the Beijing distribution, I've included the changed projects in the `src` directory: `cloudify_client`, `mso-adapter-utils`, and `mso-vnf-adapter`.
 
 
 
