@@ -113,7 +113,7 @@ Edit the ‘/etc/mso/config.d/cloud_config.json’ file to include a cloudify_ma
     }
 ```
 
-Note that the example password is the hash (AES) hex string of the plaintext password “admin”.  To use a different password, the new password will need be similarly hashed.
+Note that the example password is the hash (AES) hex string of the plaintext password “admin”.  To use a different password, the new password will need be similarly hashed.  In the [src/encrypt](src/encrypt) directory I've included a script that takes a string argument that will output AES hex strings.
 
 ### Step 3: Install Patched MsoVnfAdapter war.
 
