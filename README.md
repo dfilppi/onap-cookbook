@@ -22,12 +22,12 @@ To create the deployment, you’ll need to gather some info:
 * A Centos 7 image ID
 * A flavor ID for a 16GB instance
 * Keystone credentials:
-* * Username
-* * Password
-* * Tenant name
-* * Region
-* * Keystone URL
-* * A keypair for the instances (public and private key files).
+  * Username
+  * Password
+  * Tenant name
+  * Region
+  * Keystone URL
+  * A keypair for the instances (public and private key files).
 Run `cfy secrets create -f <private key file> agent_key_private`
 Run `cfy secrets create -f <public key file> agent_key_public`
 Fill out the included “inputs.yaml” file.
@@ -52,10 +52,10 @@ Run `kubectl get pods -n kube-system`.  You should see many lines come back, all
 * Cd to the `oom/kubernetes/so/resources/config/mso` directory.
 * Edit the `cloud_config` file for your needs.  For the Cloudify integration demo, the `cloudify_managers` section is most important.  There is an example manager configuration there.  Change the IP address to point at your Cloudify manager.  The credentials are `admin/admin`.  The password is a secure hash of the plain text password.
 * Follow these instructions: http://onap.readthedocs.io/en/latest/submodules/oom.git/docs/oom_user_guide.html#user-guide-label  with the following errata:
-* * start at the line with ‘helm init’ on it. (helm is already installed)
-* * Run `helm repo remove ‘stable’`.  No need to create a local repo, it’s already there.
-* * You can skip: > helm install local/onap --name development -f onap-development.yaml
-* * Stop at the line: > kubectl get pods --all-namespaces -o=wide
+  * start at the line with ‘helm init’ on it. (helm is already installed)
+  * Run `helm repo remove ‘stable’`.  No need to create a local repo, it’s already there.
+  * You can skip: > helm install local/onap --name development -f onap-development.yaml
+  * Stop at the line: > kubectl get pods --all-namespaces -o=wide
 
 The startup process can take quite awhile ( many minutes).  You can poll it by running ‘kubectl get pods’ and watching the status progress.  Since containers for services other than the SO are pulled from ONAP Nexus, it can’t be guaranteed that they will all complete.  For the purposes of this cookbook, the only pods that matter are the “so-” pods.
 
